@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="style.css">  -->
+    <!-- CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    overflow-x: hidden;
+}
+
+/* Navbar Styling */
+nav{
+    width: 100%;
+    height: 10vh;
+}
+
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span{
+    color: #04d9ff;
+    text-shadow: 0 0 10px #04d9ff;
+}
+
+.nav-container .links{
+    display: flex;
+}
+
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #04d9ff;
+    transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+
+.nav-container .links a:hover{
+    color: #04d9ff;
+}
+
+section{
+    width: 100%;
+    min-height:  90vh;
+}
+
+section .main-container{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 100px;
+    align-items: center;
+}
+
+.main-container .image{
+    width: 500px;
+    height: 80vh;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 50px #04d9ff;
+}
+
+.main-container .image img{
+    width: 100%;
+}
+
+.main-container .image:hover{
+    animation: animate 1.5 ease-in-out infinite;
+}
+
+@keyframes animate{
+    0%{
+        scale: 1;
+    }
+
+    50%{
+        scale: 1.05;
+    }
+
+    100%{
+        scale: 1;
+    }
+}
+
+.main-container .content{
+    color: white;
+    width: 40%;
+}
+
+.content h1{
+    font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
+}
+
+.content h1 span{
+    color: #04d9ff;
+    text-shadow: 0 0 10px #04d9ff;
+}
+
+.content .typewriter{
+    size: clamp(1rem, 1rem +5vw, 2.5rem);
+}
+
+.content .typewriter-text{
+    color: #04d9ff;
+    text-shadow: 0 0 10px;
+}
+
+.content p{
+    font-size: clamp(0.4rem, 0.2rem + 9vw, 1.8rem);
+    margin: 10px 0;
+}
+
+.social-links i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid #04d9ff;
+    color: #04d9ff;
+}
+
+.social-links i:hover{
+    scale: 1.3;
+    color: black;
+    background-color: #04d9ff;
+    filter: drop-shadow(0 0 10px #04d9ff);
+}
+
+.content button{
+    width: 50%;
+    height: 6;
+    margin: 30px;
+    background-color: #04d9ff;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 120%;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.2s linear;
+}
+
+.content button:hover{
+    scale: 1.1;
+    color: #04d9ff;
+    border: 2px solid #04d9ff;
+    background-color: transparent;
+    font-weight: 700;
+    box-shadow: 0 0 40px #04d9ff;
+}
+
+/* About Section Styling */
+section .content{
+    width: 80%;
+    margin: 0px auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about .about-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+    
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    
+    position: relative;
+    padding-bottom: 15px;
+}
+
+section .title::before, section .title::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #04d9ff;
+    left: 0;
+    bottom: 0;
+    border-radius: 2px;
+}
+
+section .title::after {
+    bottom: -10px; 
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about .about-details :left{
+    width: 45%;
+}
+
+.about .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.about-details .right{
+    width: 55%;
+}
+
+section .topic{
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.about-details .right p{
+    text-align: justify;
+    color: white;
+}
+
+section .button{
+    margin: 16px 0;
+}
+
+section .button button{
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 25px;
+    font-weight: 400;
+    background: #04d9ff;
+    color: ffff;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+section .button button:hover{
+    border-color: #04d9ff;
+    background-color: #ffff;
+    color: #04d9ff;
+}
+
+.skills{
+    background: black;
+}
+
+.skills .content{
+    padding: 40px 0;
+}
+
+.skills .skills-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.skills-detail .text {
+    width: 50%;
+}
+
+.skills-detail p {
+    color: white;
+    text-align: justify;
+    width: 50%;
+}
+
+.skills .skills-detail .experience {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.skills-detail .experience .num {
+    color: white;
+    font-size: 80px;
+}
+
+.skills-detail .experience .exp {
+    color: white;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 6px;
+}
+
+.skills-detail .boxes {
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skills-detail .box {
+    width: calc(100% / 2 - 20px);
+    margin: 20px 0;
+}
+
+.skills-detail .boxes .topic {
+    font-size: 20px;
+    color: #04d9ff;
+}
+
+.skills-detail .boxes .per {
+    font-size: 60px;
+    color: #04d9ff;
+}
+
+/* Footer Styling */
+footer {
+    width: 100%;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    background-color: #1a1a1a;
+    border-top: 2px solid #04d9ff;
+    text-align: center;
+}
+
+footer .text span {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+footer .text a {
+    color: #04d9ff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer .text a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+    nav{
+        padding: 0 5%;
+    }
+    .main-container .image {
+        width: 380px;
+        height: 380px;
+    }
+    .main-container .content {
+        width: 50%;
+    }
+    .about .about-details .left,
+    .about .about-details .right {
+        width: 50%;
+    }
+    .skills .skills-detail {
+        flex-direction: column;
+        text-align: center;
+    }
+    .skills-detail .text,
+    .skills-detail .boxes {
+        width: 100%;
+    }
+    .skills-detail .boxes {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container .links {
+        display: none;
+    }
+    section {
+        padding: 60px 5%;
+    }
+    .main-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .main-container .content {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .main-container .image {
+        width: 300px;
+        height: 300px;
+    }
+    .social-links{
+        text-align: center;
+    }
+    .about .about-details {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about .about-details .left,
+    .about .about-details .right {
+        width: 100%;
+    }
+    .about .about-details .left {
+        margin-bottom: 30px;
+    }
+    .about-details .right p {
+        text-align: center;
+    }
+}
+</style>
+
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                
+            </div>
+            <div class="links">
+                <div class="link"><a href="#home">Home</a></div>
+                <div class="link"><a href="#about">About</a></div>
+                <div class="link"><a href="#skills">Skills</a></div>
+            </div>
+        </div>
+    </nav>
+    <section id="home">
+        <div class="main-container">
+            <div class="image">
+                <img src="images/main.jpg" alt="">
+            </div>
+        <div class="content">
+            <h1>
+                Hello, I'm
+                <span>Azka</span>
+            </h1>
+            <h2>
+                I'am CS Student
+            </h2>
+            <p>
+                As a Computer Science undergraduate at Universitas Pendidikan Indonesia. Currently, I am focusing on exploratory data analysis (EDA),
+                data storytelling, and predictive modeling through hands-on projects and independent learning.
+                I am actively building a portfolio that reflects my analytical capabilities and attention to detail.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/FoxfortSix">
+                <i class="fa-brands fa-github"></i>
+                </a>
+                
+                <a href="https://www.facebook.com/m.azka.922129/">
+                <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/m-azka-basria/">
+                <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+                <a href="https://www.instagram.com/azkanotfound/">
+                <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <!-- ABOUT_BEGIN -->
+    <section class="about" id="about">
+        <div class="content">
+            <div class="title">About Me</div>
+            <div class="about-details">
+                <div class="left">
+                    <img src="images/me.jpg" alt="">
+                </div>
+                <div class="right">
+                    <div class="topic">Processing Data Into Insights</div>
+                    <p>I am proficient in R programming language, Python, SQL, and Excel for data processing and analysis. I have also worked with Tableau for data visualization and reporting. My technical foundation is complemented by experience in structured problem solving, team collaboration, and academic communication.</p>
+                    <div class="button">
+                        <a href="Mochammad_azka_basria.pdf" download="CV_Mochammad_Azka_Basria.pdf">
+                        <button>
+                            Download CV
+                        </button>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MY-SKILL_BEGIN -->
+    <section class="skills" id="skills">
+        <div class="content">
+            <div class="title"><span>My Skills</span></div>
+        </div>
+        <div class="skills-detail">
+            <div class="text">
+                <div class="topic">
+                    Skill Reflects Our Knowledge
+                </div>
+                <p>Currently, i'm pursuing a Bachelor's degree in Computer Science with a focus and interest in Data Analyst. Actively involved in student organizations such as BEM Keluarga Mahasiswa Komputer (BEM KEMAKOM) and English Debating Society Universitas Pendidikan Indonesia (EDS UPI). Currently studying and using R, Python, C, Figma, PHP, CSS, JavaScript and Git in various academic projects.</p>
+                <div class="experience">
+                    <div class="num">1</div>
+                    <div class="exp">
+                        Years Of <br>
+                        Experience
+                    </div>
+            </div>
+                </div>
+                <div class="boxes">
+                    <div class="box">
+                        <div class="topic">C</div>
+                        <div class="per">80%</div>
+                    </div>
+                    <div class="box">
+                        <div class="topic">HTML</div>
+                        <div class="per">80%</div>
+                    </div>
+                    <div class="box">
+                        <div class="topic">CSS</div>
+                        <div class="per">70%</div>
+                    </div>
+                    <div class="box">
+                        <div class="topic">PHP</div>
+                        <div class="per">40%</div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="text">
+            <span>
+            Created By
+            <a href="#">Azka</a>
+            &#169; 2025 All Rights Reserved
+            </span>
+        </div>
+    </footer>
+</body>
+</html>
