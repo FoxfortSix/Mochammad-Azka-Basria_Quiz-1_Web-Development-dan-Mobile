@@ -27,4 +27,3 @@ Struktur halaman terdiri dari beberapa bagian utama:
 1. Unduh atau kloning repositori ini.
 2. Simpan semua berkas pada direktori yang sama, termasuk folder `images/` dan berkas `Mochammad_azka_basria.pdf`.
 3. Buka file `index.html` menggunakan peramban web.
-└── README.md
